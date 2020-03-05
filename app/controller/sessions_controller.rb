@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   
-  get '/login'
+  get '/login' do
     erb :"sessions/login.html"
   end
   
