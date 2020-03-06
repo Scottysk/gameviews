@@ -10,4 +10,21 @@ class ApplicationController < Sinatra::Base
   get '/' do
     "hello world"
   end
+  
+  
+  helpers do
+    
+    def logged_in?
+      !!session[:email]
+    end
+    
+    def login(email)
+      session[:email] = email
+    end
+    
+    def logout!
+      session.clear
+    end
+    
+  end
 end
