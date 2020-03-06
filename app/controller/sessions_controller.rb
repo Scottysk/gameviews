@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   
   get '/logout' do
     logout!
+    redirect '/posts'
   end
   
   post '/sessions' do
