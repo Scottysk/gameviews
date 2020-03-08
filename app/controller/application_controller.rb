@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do
-    "Gamesviews - A place to view game collections."
+    erb :layout
   end
   
   
