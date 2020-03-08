@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do
-    "hello world"
+    "Gamesviews - A place to view game collections."
   end
   
   

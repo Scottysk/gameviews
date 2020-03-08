@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   get '/posts' do
-    "Publically available posts."
+    "Publically available games lists."
   end
   
   get '/posts/new' do
