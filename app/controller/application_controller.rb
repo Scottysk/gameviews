@@ -1,35 +1,35 @@
 class ApplicationController < Sinatra::Base
-  
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "auth_demo"
   end
-  
+
   get '/' do
-    erb :'/views/layout'
+    erb :'/layout/layout'
   end
-  
-  
+
+
   helpers do
-    
+
     def logged_in?
       !!session[:email]
     end
-    
+
     def login(email, password)
-      user = User.find_by(:email => email) 
+      user = User.find_by(:email => email)
       if user = user.authenticate(password)
       session[:email] = user.email
       else
         redirect '/login'
     end
   end
-    
+
     def logout!
       session.clear
     end
-    
+
   end
 end
